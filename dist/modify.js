@@ -1,11 +1,11 @@
-export interface Modifier {
-  type: ModifierType;
-  value: number;
-}
+"use strict";
 
-export type ModifierType = "-" | "+" | undefined;
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.modify = modify;
 
-export function modify(value: number, modifier: Modifier): number {
+function modify(value, modifier) {
   if (isNaN(modifier.value)) return value;
 
   switch (modifier.type) {

@@ -5,14 +5,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.roll = roll;
 
-var _die = require("./die");
+var _dice = require("./dice");
 
-function roll(amount, faces) {
-  const results = [];
+var _modify = require("./modify");
 
-  for (let i = 0; i < amount; i++) {
-    results.push((0, _die.die)(faces));
-  }
-
-  return results;
+function roll(command) {
+  const rolls = (0, _dice.dice)(command.amount, command.faces);
+  const total = rolls.reduce((acc, current) => acc + current.result, 0);
+  const totalModified = command.modifier ? (0, _modify.modify)(total, command.modifier) : total;
+  return {
+    command,
+    rolls,
+    total,
+    totalModified
+  };
 }
