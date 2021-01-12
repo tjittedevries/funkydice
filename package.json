@@ -5,7 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "check-types": "tsc",
-    "compile": "tsc && babel src --out-dir dist --extensions .ts",
+    "compile": "tsc && babel src --out-dir dist --ignore '**/*.test.ts' --extensions .ts",
     "test": "jest",
     "test:watch": "jest --watch"
   },
