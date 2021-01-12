@@ -3,7 +3,7 @@ export interface Modifier {
   value: number;
 }
 
-export type ModifierType = "-" | "+" | undefined;
+export type ModifierType = "-" | "+";
 
 export function modify(value: number, modifier: Modifier): number {
   if (isNaN(modifier.value)) return value;

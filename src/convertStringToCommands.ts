@@ -52,13 +52,7 @@ export function extractModifierFromString(
 
   if (!regexResults) return undefined;
 
-  let modifierType: ModifierType = undefined;
-
-  if (regexResults[1] === "-") {
-    modifierType = "-";
-  } else if (regexResults[1] === "+") {
-    modifierType = "+";
-  }
+  const modifierType: ModifierType = regexResults[1] === "-" ? "-" : "+";
 
   return {
     type: modifierType,
