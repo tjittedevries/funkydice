@@ -1,10 +1,10 @@
 node_modules
 src
 .vscode
-babel.config.json
 jest.config.js
 tsconfig.json
 .editorconfig
 .eslintrc.js
 .github
 dist/*.test.d.ts
+rollup.config.js

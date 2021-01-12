@@ -1,7 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
 // interface RollsResult {
 //   result: number;
 //   rolls: RollResult[];
@@ -101,4 +97,4 @@ function funkydice(commandString) {
     return commands.map(function (command) { return roll(command); });
 }
 
-exports.funkydice = funkydice;
+export { funkydice };

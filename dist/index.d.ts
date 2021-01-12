@@ -1,0 +1,1 @@
+export { funkydice } from "./funkydice";
