@@ -79,13 +79,7 @@ function extractModifierFromString(modifierString) {
     var regexResults = regex.exec(modifierString);
     if (!regexResults)
         return undefined;
-    var modifierType = undefined;
-    if (regexResults[1] === "-") {
-        modifierType = "-";
-    }
-    else if (regexResults[1] === "+") {
-        modifierType = "+";
-    }
+    var modifierType = regexResults[1] === "-" ? "-" : "+";
     return {
         type: modifierType,
         value: parseInt(regexResults[2], 10),
