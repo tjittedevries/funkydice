@@ -5,12 +5,15 @@
     "module": "es6",
     "noImplicitAny": true,
     "outDir": "./dist",
-    "target": "es5"
+    "target": "es5",
+    "types": [],
+    "moduleResolution": "node"
   },
   "include": [
     "src/**/*"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "src/**/*.test.ts"
   ]
 }
