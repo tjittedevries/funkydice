@@ -1,8 +1,8 @@
 {
-  "name": "src",
-  "version": "1.0.0",
+  "name": "funkydice",
+  "version": "0.9.0",
   "description": "",
-  "main": "stringDice.js",
+  "main": "index.js",
   "scripts": {
     "check-types": "tsc",
     "compile": "tsc && babel src --out-dir dist --extensions .ts",
