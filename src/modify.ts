@@ -13,7 +13,7 @@ export function modify(value: number, modifier: Modifier): number {
       return value - modifier.value;
 
     case "+":
-      return value - modifier.value;
+      return value + modifier.value;
 
     default:
       return value;

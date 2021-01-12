@@ -1,7 +1,7 @@
 import { modify, Modifier } from "./modify";
 
 describe("modify", () => {
-  test("with modifier", () => {
+  test("with minus modifier", () => {
     const modifier: Modifier = {
       type: "-",
       value: 5,
@@ -10,11 +10,12 @@ describe("modify", () => {
     expect(modify(20, modifier)).toBe(15);
   });
 
-  test("without modifier", () => {
+  test("with plus modifier", () => {
     const modifier: Modifier = {
-      type: undefined,
+      type: "+",
       value: 5,
     };
-    expect(modify(20, modifier)).toBe(20);
+
+    expect(modify(20, modifier)).toBe(25);
   });
 });
