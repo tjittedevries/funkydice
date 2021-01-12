@@ -24,6 +24,7 @@ export function convertStringToCommands(commandString: string): Command[] {
   return commands;
 }
 
+// @todo should this return an array of type Command? 
 export function extractCommandsFromString(commandString: string): string[] {
   return commandString.split(",");
 }

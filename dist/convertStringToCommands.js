@@ -23,7 +23,8 @@ function convertStringToCommands(commandString) {
     }
   });
   return commands;
-}
+} // @todo should this return an array of type Command? 
+
 
 function extractCommandsFromString(commandString) {
   return commandString.split(",");
