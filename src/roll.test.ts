@@ -28,11 +28,11 @@ describe("roll", () => {
 
   test("result in range", () => {
     const rollResult = roll(command);
-    expectBetween(rollResult.totalModified, command.faces);
+    expectBetween(rollResult.totalUnmodified, command.faces);
   });
 
   test("result with modifiers in range", () => {
     const rollResult = roll(commandModifed);
-    expect(rollResult.totalModified).toBe(rollResult.total - 5);
+    expect(rollResult.total).toBe(rollResult.totalUnmodified - modifier.value);
   });
 });

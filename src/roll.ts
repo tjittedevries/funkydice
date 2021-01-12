@@ -7,20 +7,23 @@ export interface InterfaceResult {
   command: Command;
   rolls: RollResult[];
   total: number;
-  totalModified: number;
+  totalUnmodified: number;
 }
 
 export function roll(command: Command): InterfaceResult {
   const rolls = dice(command.amount, command.faces);
-  const total = rolls.reduce((acc, current) => acc + current.result, 0);
-  const totalModified = command.modifier
-    ? modify(total, command.modifier)
-    : total;
+  const totalUnmodified = rolls.reduce(
+    (acc, current) => acc + current.result,
+    0
+  );
+  const total = command.modifier
+    ? modify(totalUnmodified, command.modifier)
+    : totalUnmodified;
 
   return {
     command,
     rolls,
     total,
-    totalModified,
+    totalUnmodified,
   } as InterfaceResult;
 }

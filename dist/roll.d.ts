@@ -4,6 +4,6 @@ export interface InterfaceResult {
     command: Command;
     rolls: RollResult[];
     total: number;
-    totalModified: number;
+    totalUnmodified: number;
 }
 export declare function roll(command: Command): InterfaceResult;

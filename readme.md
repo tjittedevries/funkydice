@@ -26,7 +26,10 @@ The type of result is an array made with of the following type:
         }
     ],
     total: number,
-    totalModified: number,
+    totalUnmodified: number,
 }
 ```
 
+It's also possible to write multiple commands:
+
+    funkydice('1d6,2d8,9d30+2')
