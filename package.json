@@ -3,7 +3,6 @@
   "version": "0.9.0",
   "description": "Roll all kinds of dice using string commands like 1d20+1",
   "main": "dist/index.js",
-  "private": true,
   "scripts": {
     "check-types": "tsc",
     "compile": "tsc && babel src --out-dir dist --extensions .ts",
