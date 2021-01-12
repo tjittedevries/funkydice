@@ -4,11 +4,12 @@
   "description": "Roll all kinds of dice using string commands like 1d20+1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "types": "dist/index.d.ts",
   "scripts": {
     "check-types": "tsc",
-    "compile": "tsc && babel src --out-dir dist --ignore '**/*.test.ts' --extensions .ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "rollup -c"
@@ -19,10 +20,6 @@
   "author": "Tjitte de Vries",
   "license": "MIT",
   "devDependencies": {
-    "@babel/cli": "^7.12.8",
-    "@babel/core": "^7.12.8",
-    "@babel/preset-env": "^7.12.7",
-    "@babel/preset-typescript": "^7.12.7",
     "@types/jest": "^26.0.15",
     "@types/node": "^14.14.9",
     "@typescript-eslint/eslint-plugin": "^4.8.2",
