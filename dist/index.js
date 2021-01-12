@@ -28,7 +28,7 @@ function modify(value, modifier) {
         case "-":
             return value - modifier.value;
         case "+":
-            return value - modifier.value;
+            return value + modifier.value;
         default:
             return value;
     }
