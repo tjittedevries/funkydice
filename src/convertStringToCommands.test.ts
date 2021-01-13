@@ -37,4 +37,21 @@ describe("convertStringToCommands", () => {
     const result = convertStringToCommands("1d4");
     expect(result.length).toBe(1);
   });
+
+  test("limits of regex inextractCommandFromString", () => {
+    const result0 = convertStringToCommands("999d999+999");
+    expect(result0.length).toBe(1);
+
+    const result1 = convertStringToCommands("9999d6");
+    expect(result1.length).toBe(0);
+
+    const result2 = convertStringToCommands("1d9999");
+    expect(result2.length).toBe(0);
+
+    const result3 = convertStringToCommands("1d6+9999");
+    expect(result3.length).toBe(0);
+
+    const result4 = convertStringToCommands("9999d9999+9999");
+    expect(result4.length).toBe(0);
+  });
 });
