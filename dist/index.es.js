@@ -64,7 +64,7 @@ function extractCommandsFromString(commandString) {
     return commandString.split(",");
 }
 function extractCommandFromString(commandString) {
-    var regex = /^([1-9]\d{0,2})d([1-9]\d{0,2})([+-]\d{0,3})?$/gim;
+    var regex = /^([1-9]\d*)d([1-9]\d*)([+-]\d+)?$/gim;
     var regexResults = regex.exec(commandString);
     if (!regexResults)
         return undefined;
