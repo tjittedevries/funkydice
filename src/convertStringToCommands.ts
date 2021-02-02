@@ -32,7 +32,7 @@ export function extractCommandsFromString(commandString: string): string[] {
 export function extractCommandFromString(
   commandString: string
 ): Command | undefined {
-  const regex = /^([1-9]\d{0,2})d([1-9]\d{0,2})([+-]\d{0,3})?$/gim;
+  const regex = /^([1-9]\d*)d([1-9]\d*)([+-]\d+)?$/gim;
   const regexResults = regex.exec(commandString);
 
   if (!regexResults) return undefined;
