@@ -1,6 +1,6 @@
-import { die, RollResult } from "./die";
+import { die, RollResult, TypeFaces } from "./die";
 
-export function dice(amount: number, faces: number): RollResult[] {
+export function dice(amount: number, faces: TypeFaces): RollResult[] {
   const results: RollResult[] = [];
 
   for (let i = 0; i < amount; i++) {

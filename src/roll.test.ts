@@ -21,6 +21,11 @@ describe("roll", () => {
     modifier,
   };
 
+  const commandFate: Command = {
+    amount: 4,
+    faces: "f",
+  };
+
   test("one command", () => {
     const rollResult = roll(command);
     expect(rollResult.rolls.length).toBe(1);
@@ -28,11 +33,17 @@ describe("roll", () => {
 
   test("result in range", () => {
     const rollResult = roll(command);
-    expectBetween(rollResult.totalUnmodified, command.faces);
+    expectBetween(rollResult.totalUnmodified, 20); // @todo add rollResult.maximum because faces is not the maximum, modifer needs to be added
   });
 
   test("result with modifiers in range", () => {
     const rollResult = roll(commandModifed);
     expect(rollResult.total).toBe(rollResult.totalUnmodified - modifier.value);
+  });
+
+  test("fate command", () => {
+    const rollResult = roll(commandFate);
+    expect(rollResult.rolls.length).toBe(4);
+    expectBetween(rollResult.totalUnmodified, 4, -4);
   });
 });

@@ -1,7 +1,8 @@
 import { Modifier } from "./modify";
+import { TypeFaces } from "./die";
 export interface Command {
     amount: number;
-    faces: number;
+    faces: TypeFaces;
     modifier?: Modifier;
 }
 export declare function convertStringToCommands(commandString: string): Command[];

@@ -1,2 +1,2 @@
-import { RollResult } from "./die";
-export declare function dice(amount: number, faces: number): RollResult[];
+import { RollResult, TypeFaces } from "./die";
+export declare function dice(amount: number, faces: TypeFaces): RollResult[];

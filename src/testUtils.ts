@@ -1,6 +1,10 @@
 import { expect } from "@jest/globals";
 
-export function expectBetween(value: number, max: number): void {
-  expect(value).toBeGreaterThanOrEqual(1);
+export function expectBetween(
+  value: number,
+  max: number,
+  min: number = 1
+): void {
+  expect(value).toBeGreaterThanOrEqual(min);
   expect(value).toBeLessThanOrEqual(max);
 }

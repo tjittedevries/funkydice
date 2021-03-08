@@ -1,8 +1,9 @@
 import { Modifier, ModifierType } from "./modify";
+import { TypeFaces } from "./die";
 
 export interface Command {
   amount: number;
-  faces: number;
+  faces: TypeFaces;
   modifier?: Modifier;
 }
 
@@ -32,6 +33,17 @@ export function extractCommandsFromString(commandString: string): string[] {
 export function extractCommandFromString(
   commandString: string
 ): Command | undefined {
+  const regexFate = /^([1-9]\d*)df([+-]\d+)?$/gim;
+  const regexFateResults = regexFate.exec(commandString);
+
+  if (regexFateResults) {
+    return {
+      amount: parseInt(regexFateResults[1], 10),
+      faces: "f",
+      modifier: extractModifierFromString(regexFateResults[3]),
+    };
+  }
+
   const regex = /^([1-9]\d*)d([1-9]\d*)([+-]\d+)?$/gim;
   const regexResults = regex.exec(commandString);
 

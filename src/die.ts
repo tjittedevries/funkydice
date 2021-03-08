@@ -1,16 +1,34 @@
+export type TypeFaces = number | "f";
+
 export interface RollResult {
-  faces: number;
+  faces: TypeFaces;
   result: number;
 }
 
-// interface RollsResult {
-//   result: number;
-//   rolls: RollResult[];
-// }
+export function die(faces: TypeFaces): RollResult {
+  if (faces === "f") {
+    const randNum = rand(3);
+    let fateResult = 0;
 
-export function die(faces: number): RollResult {
+    if (randNum === 1) {
+      fateResult = -1;
+    }
+    if (randNum === 3) {
+      fateResult = 1;
+    }
+
+    return {
+      faces: "f",
+      result: fateResult,
+    };
+  }
+
   return {
     faces,
-    result: Math.floor(Math.random() * faces) + 1,
+    result: rand(faces),
   };
+}
+
+export function rand(faces: number): number {
+  return Math.floor(Math.random() * faces) + 1;
 }

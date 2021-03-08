@@ -1,12 +1,25 @@
-// interface RollsResult {
-//   result: number;
-//   rolls: RollResult[];
-// }
 function die(faces) {
+    if (faces === "f") {
+        var randNum = rand(3);
+        var fateResult = 0;
+        if (randNum === 1) {
+            fateResult = -1;
+        }
+        if (randNum === 3) {
+            fateResult = 1;
+        }
+        return {
+            faces: "f",
+            result: fateResult,
+        };
+    }
     return {
         faces: faces,
-        result: Math.floor(Math.random() * faces) + 1,
+        result: rand(faces),
     };
+}
+function rand(faces) {
+    return Math.floor(Math.random() * faces) + 1;
 }
 
 function dice(amount, faces) {
@@ -64,6 +77,15 @@ function extractCommandsFromString(commandString) {
     return commandString.split(",");
 }
 function extractCommandFromString(commandString) {
+    var regexFate = /^([1-9]\d*)df([+-]\d+)?$/gim;
+    var regexFateResults = regexFate.exec(commandString);
+    if (regexFateResults) {
+        return {
+            amount: parseInt(regexFateResults[1], 10),
+            faces: "f",
+            modifier: extractModifierFromString(regexFateResults[3]),
+        };
+    }
     var regex = /^([1-9]\d*)d([1-9]\d*)([+-]\d+)?$/gim;
     var regexResults = regex.exec(commandString);
     if (!regexResults)
