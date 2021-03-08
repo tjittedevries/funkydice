@@ -94,5 +94,12 @@ function funkydice(commandString) {
     var commands = convertStringToCommands(commandString);
     return commands.map(function (command) { return roll(command); });
 }
+function funkydie(commandString) {
+    var command = extractCommandFromString(commandString);
+    if (!command)
+        return;
+    return roll(command);
+}
 
 exports.funkydice = funkydice;
+exports.funkydie = funkydie;
