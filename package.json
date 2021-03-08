@@ -1,6 +1,6 @@
 {
   "name": "funkydice",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Roll all kinds of dice using string commands like 1d20+1",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
