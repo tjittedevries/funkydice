@@ -1,4 +1,4 @@
-import { funkydice } from "./funkydice";
+import { funkydice, funkydie } from "./funkydice";
 
 describe("Funkydice", () => {
   test("with one correct command", () => {
@@ -15,5 +15,15 @@ describe("Funkydice", () => {
 
   test("one incorrect command", () => {
     expect(funkydice("1").length).toBe(0);
+  });
+});
+
+describe("Funkydie", () => {
+  test("one correct command", () => {
+    expect(funkydie("1d6")).toBeTruthy();
+  });
+
+  test("one incorrect command", () => {
+    expect(funkydie("1")).toBe(undefined);
   });
 });
