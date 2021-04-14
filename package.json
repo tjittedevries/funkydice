@@ -1,6 +1,6 @@
 {
   "name": "funkydice",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Roll all kinds of dice using string commands like 1d20+1",
   "repository": {
     "type": "git",
