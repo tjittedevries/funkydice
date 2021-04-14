@@ -2,6 +2,9 @@
 
 Roll all kinds of dice using string commands like 1d20+1
 
+Supports all kinds of "dice", from ```1d2``` to ```1d10000```.
+Also supports Fate dice by using ```4df```.
+
 ## Usage
 
     import { funkydice } from 'funkydice'

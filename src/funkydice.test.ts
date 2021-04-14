@@ -9,7 +9,7 @@ describe("Funkydice", () => {
     expect(funkydice("1d4,2d8").length).toBe(2);
   });
 
-  test("with one correct and one incorrenc command", () => {
+  test("with one correct and one incorrect command", () => {
     expect(funkydice("1d4,3d").length).toBe(1);
   });
 

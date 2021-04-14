@@ -13,4 +13,10 @@ describe("die", () => {
     expect(roll.faces).toBe(100);
     expectBetween(roll.result, 100);
   });
+
+  test("Fate die", () => {
+    const roll = die("f");
+    expect(roll.faces).toBe("f");
+    expectBetween(roll.result, 1, -1);
+  });
 });
