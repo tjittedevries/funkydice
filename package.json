@@ -2,6 +2,10 @@
   "name": "funkydice",
   "version": "1.0.10",
   "description": "Roll all kinds of dice using string commands like 1d20+1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tjittedevries/funkydice"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "files": [
@@ -15,7 +19,11 @@
     "test:watch": "jest --watch"
   },
   "keywords": [
-    "dice"
+    "dice",
+    "die",
+    "d20",
+    "roll",
+    "dice-roller"
   ],
   "author": "Tjitte de Vries",
   "license": "MIT",
