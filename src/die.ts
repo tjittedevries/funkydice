@@ -23,6 +23,16 @@ export function die(faces: TypeFaces): RollResult {
     };
   }
 
+  if (faces === 66) {
+    const first = rand(6);
+    const second = rand(6);
+
+    return {
+      faces,
+      result: parseInt(`${first}${second}`),
+    };
+  }
+
   return {
     faces,
     result: rand(faces),

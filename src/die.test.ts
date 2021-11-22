@@ -19,4 +19,10 @@ describe("die", () => {
     expect(roll.faces).toBe("f");
     expectBetween(roll.result, 1, -1);
   });
+
+  test("d66", () => {
+    const roll = die(66);
+    expect(roll.faces).toBe(66);
+    expectBetween(roll.result, 66, 11);
+  });
 });

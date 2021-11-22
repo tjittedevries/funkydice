@@ -17,6 +17,14 @@ function die(faces) {
             result: fateResult,
         };
     }
+    if (faces === 66) {
+        var first = rand(6);
+        var second = rand(6);
+        return {
+            faces: faces,
+            result: parseInt("" + first + second),
+        };
+    }
     return {
         faces: faces,
         result: rand(faces),
