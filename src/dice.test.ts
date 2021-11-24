@@ -1,20 +1,14 @@
-import { dice } from "./dice";
+import { die, fateDie } from "./dice";
 import { expectBetween } from "./testUtils";
 
-describe("dice", () => {
-  test("6d20", () => {
-    const rolls = dice(6, 20);
-
-    expect(rolls.length).toBe(6);
-
-    expectBetween(rolls[0].result, 20);
+describe("Dice", () => {
+  test("Default die", () => {
+    const result = die(6)();
+    expectBetween(result, 6);
   });
 
-  test("1d8", () => {
-    const rolls = dice(1, 8);
-
-    expect(rolls.length).toBe(1);
-
-    expectBetween(rolls[0].result, 8);
+  test("Fate die", () => {
+    const result = fateDie()();
+    expectBetween(result, 4, -4);
   });
 });

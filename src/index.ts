@@ -1,1 +1,1 @@
-export { funkydice, funkydie } from "./funkydice";
+export { funkydie } from "./funkydice";

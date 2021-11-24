@@ -7,4 +7,4 @@ tsconfig.json
 .eslintrc.js
 .github
 dist/*.test.d.ts
-rollup.config.js
+esbuild.config.js
