@@ -1,11 +1,14 @@
-import { die, RollResult, TypeFaces } from "./die";
+import { rand } from "./rand";
 
-export function dice(amount: number, faces: TypeFaces): RollResult[] {
-  const results: RollResult[] = [];
+export function die(faces: number): () => number {
+  return () => rand(faces);
+}
 
-  for (let i = 0; i < amount; i++) {
-    results.push(die(faces));
-  }
-
-  return results;
+export function fateDie(): () => number {
+  return () => {
+    const result = rand(3);
+    if (result === 1) return -1;
+    if (result === 3) return 1;
+    return 0;
+  };
 }
