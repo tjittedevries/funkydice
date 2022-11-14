@@ -1,5 +1,6 @@
 {
   "name": "funkydice",
+  "type": "module",
   "version": "2.0.1",
   "description": "Roll all kinds of dice using string commands like 1d20+1",
   "repository": {

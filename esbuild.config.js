@@ -1,7 +1,5 @@
-const esbuild = require("esbuild");
-
-// Automatically exclude all node_modules from the bundled version
-const { nodeExternalsPlugin } = require("esbuild-node-externals");
+import esbuild from 'esbuild'
+import { nodeExternalsPlugin } from "esbuild-node-externals";
 
 esbuild
   .build({
@@ -11,7 +9,8 @@ esbuild
     minify: true,
     platform: "node",
     sourcemap: true,
-    target: "node14",
+    format: 'esm',
+    target: ['esnext'],
     plugins: [nodeExternalsPlugin()],
   })
-  .catch(() => process.exit(1));
+  .catch((process) => process.exit(1));
